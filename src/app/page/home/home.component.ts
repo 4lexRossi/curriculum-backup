@@ -1,6 +1,6 @@
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
-
+  
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {

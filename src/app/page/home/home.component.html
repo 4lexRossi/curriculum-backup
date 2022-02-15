@@ -4,20 +4,38 @@
     <mat-stepper #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Fill out your personal information</ng-template>        
-          <mat-card> Simple card </mat-card>
+          <ng-template matStepLabel
+            >Fill out your personal information</ng-template
+          >
+          <mat-card class="personal-form">
+            <mat-card>
+              <mat-form-field class="field-full-name" appearance="fill">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="">
+              </mat-form-field>
+              <mat-form-field class="field-gender" appearance="fill">
+                <mat-label>Choose a gender</mat-label>
+                <mat-select>
+                  <mat-option value="male">Male</mat-option>
+                  <mat-option value="female"
+                    >Female</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </mat-card>
+          </mat-card>
           <div>
             <!-- <p>Go to a different step to see the error state</p> -->
             <button mat-button matStepperNext>Next</button>
           </div>
         </form>
       </mat-step>
-      <mat-step
-        [stepControl]="secondFormGroup"        
-      >
+      <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Fill out your bussiness information</ng-template>
-            <!-- <mat-label>Address</mat-label> -->            
+          <ng-template matStepLabel
+            >Fill out your bussiness information</ng-template
+          >
+          <!-- <mat-label>Address</mat-label> -->
           <div>
             <!-- <p>Go to a different step to see the error state</p> -->
             <button mat-button matStepperPrevious>Back</button>
@@ -26,7 +44,7 @@
         </form>
       </mat-step>
       <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
+        <ng-template matStepLabel>Review info and generate resumee</ng-template>
         <p>Review info and generate resumee</p>
         <div>
           <button mat-button matStepperPrevious>Back</button>
