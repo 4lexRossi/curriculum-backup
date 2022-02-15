@@ -1,12 +1,38 @@
-<section>
-  <div class="example-label">Raised</div>
-  <div class="example-button-row">
-    <button mat-raised-button>Basic</button>
-    <button mat-raised-button color="primary">Primary</button>
-    <button mat-raised-button color="accent">Accent</button>
-    <button mat-raised-button color="warn">Warn</button>
-    <button mat-raised-button disabled>Disabled</button>
-    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+<div class="home-component">
+  <div class="home-header"></div>
+  <div class="home-body">
+    <mat-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Fill out your personal information</ng-template>        
+          <mat-card> Simple card </mat-card>
+          <div>
+            <!-- <p>Go to a different step to see the error state</p> -->
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step
+        [stepControl]="secondFormGroup"        
+      >
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Fill out your bussiness information</ng-template>
+            <!-- <mat-label>Address</mat-label> -->            
+          <div>
+            <!-- <p>Go to a different step to see the error state</p> -->
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>Review info and generate resumee</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
   </div>
-</section>
-<h1>home works!</h1>
+</div>
