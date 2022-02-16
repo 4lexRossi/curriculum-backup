@@ -7,17 +7,28 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: rgb(197, 191, 191);
+  background-color: var(--color-background);
+}
+
+:root {
+  --color-primary: rgb(138, 43, 226);
+  --color-primary-lighter: rgb(138, 43, 226, 0.5);
+  --color-background: rgb(197, 191, 191);
+  --color-font: rgb(58, 57, 57);
+}
+
+:root .mat-raised-button {
+  background-color: var(--color-primary);
 }
 
 :root .mat-stepper-horizontal {
-    background-color: transparent;
-  }
+  background-color: transparent;
+}
 
 :root .mat-form-field-flex {
   border-radius: 8px !important;
-  background-color: #892be29d !important;
-  color: rgb(58, 57, 57);
+  background-color: var(--color-primary-lighter) !important;
+  color: var(--color-font);
   font-weight: 500;
 }
 

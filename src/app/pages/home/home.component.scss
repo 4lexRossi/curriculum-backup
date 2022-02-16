@@ -1,11 +1,15 @@
 .home-component {
-  // background-color: transparent;
   .home-header {
-    background-color: #8a2be2;
+    background-color: var(--color-primary);
     height: 300px;
   }
 
   .home-body {
     margin: -150px 100px 0;
+    .form-action {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
   }
 }
