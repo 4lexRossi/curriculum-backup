@@ -14,8 +14,8 @@
     .form-first-line {
       display: flex;
       .field-full-name {
-        width: 70%;
-        margin-right: 10%;
+        width: 75%;
+        margin-right: 5%;
       }
 
       .field-gender {
@@ -24,12 +24,55 @@
     }
     .form-second-line {
       display: flex;
-      justify-content: space-between;
       .field-email {
-        margin-right: 10%;
+        margin-right: 5%;
       }
       .field-email,
       .field-telephone {
+        width: 50%;        
+      }
+    }
+
+    .form-third-line {
+      display: flex;
+      .field-zip-code {
+        margin-right: 5%;
+      }
+      .field-zip-code,
+      .field-city {
+        width: 50%;        
+      }
+    }
+
+    .form-fourth-line {
+      .field-adress {
+        width: 75%;
+        margin-right: 5%;
+      }
+
+      .field-state {
+        width: 20%;
+      }
+    }
+
+    .form-fifth-line {
+      display: flex;
+      .field-civil-state {
+        margin-right: 5%;
+      }
+      .field-civil-state,
+      .field-citizenship {
+        width: 50%;        
+      }
+    }
+
+    .form-sixt-line {
+      display: flex;
+      .field-linkedin {
+        margin-right: 5%;
+      }
+      .field-linkedin,
+      .field-website {
         width: 50%;        
       }
     }
