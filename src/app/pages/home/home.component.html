@@ -7,23 +7,8 @@
           <ng-template matStepLabel
             >Fill out your personal information</ng-template
           >
-          <mat-card class="personal-form">
-            <mat-card>
-              <mat-form-field class="field-full-name" appearance="fill">
-                <mat-label>Full Name</mat-label>
-                <input matInput placeholder="">
-              </mat-form-field>
-              <mat-form-field class="field-gender" appearance="fill">
-                <mat-label>Choose a gender</mat-label>
-                <mat-select>
-                  <mat-option value="male">Male</mat-option>
-                  <mat-option value="female"
-                    >Female</mat-option
-                  >
-                </mat-select>
-              </mat-form-field>
-            </mat-card>
-          </mat-card>
+         <app-personal-form></app-personal-form>
+
           <div>
             <!-- <p>Go to a different step to see the error state</p> -->
             <button mat-button matStepperNext>Next</button>
