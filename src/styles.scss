@@ -8,8 +8,19 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: rgb(197, 191, 191);
-
 }
+
 :root .mat-stepper-horizontal {
-  background-color: transparent;
+    background-color: transparent;
+  }
+
+:root .mat-form-field-flex {
+  border-radius: 8px !important;
+  background-color: #892be29d !important;
+  color: rgb(58, 57, 57);
+  font-weight: 500;
+}
+
+:root .mat-form-field-underline {
+  display: none;
 }
