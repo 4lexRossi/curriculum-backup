@@ -1,11 +1,15 @@
 <mat-card class="personal-form">
   <div class="personal-title">
     <h2>Personal Detail</h2>
-    <mat-form-field class="field-gender" appearance="fill">
+    <mat-form-field class="field-language" appearance="fill">
       <mat-label>Language</mat-label>
-      <mat-select>
-        <mat-option value="english">English</mat-option>
-        <mat-option value="portuguese">Português</mat-option>
+      <mat-select [(ngModel)]="selectedLanguageValue" ngDefaultControl  name="language">
+        <mat-option
+          (click)="getLanguage(language.value)"
+          *ngFor="let language of languages"
+          [value]="language.value"
+          >{{ language.viewValue }}</mat-option
+        >
       </mat-select>
     </mat-form-field>
   </div>
@@ -14,65 +18,68 @@
     <div class="form-first-line">
       <mat-form-field class="field-full-name" appearance="fill">
         <mat-label>Full Name</mat-label>
-        <input matInput placeholder="" />
+        <input [(ngModel)]="personalDetailForm.fullName" ngDefaultControl matInput placeholder="" />
       </mat-form-field>
       <mat-form-field class="field-gender" appearance="fill">
         <mat-label>Chose a gender</mat-label>
-        <mat-select>
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
+        <mat-select [(ngModel)]="personalDetailForm.gender" ngDefaultControl  name="gender">
+          <mat-option
+            *ngFor="let gender of genders"
+            [value]="gender.value"
+            >{{ gender.viewValue }}</mat-option
+          >
         </mat-select>
       </mat-form-field>
     </div>
     <div class="form-second-line">
       <mat-form-field class="field-email" appearance="fill">
         <mat-label>E-mail</mat-label>
-        <input matInput placeholder="" />
+        <input [(ngModel)]="personalDetailForm.email" ngDefaultControl matInput placeholder="" />
       </mat-form-field>
       <mat-form-field class="field-telephone" appearance="fill">
         <mat-label>Contact Phone</mat-label>
-        <input matInput placeholder="" />
+        <input [(ngModel)]="personalDetailForm.phone" ngDefaultControl matInput placeholder="" />
       </mat-form-field>
     </div>
     <div class="form-third-line">
       <mat-form-field class="field-zip-code" appearance="fill">
         <mat-label>Zip code</mat-label>
-        <input matInput placeholder="" />
+        <input [(ngModel)]="address.zipCode" ngDefaultControl matInput placeholder="" />
       </mat-form-field>
       <mat-form-field class="field-city" appearance="fill">
         <mat-label>City</mat-label>
-        <input matInput placeholder="" />
+        <input [(ngModel)]="address.city" ngDefaultControl matInput placeholder="" />
       </mat-form-field>
     </div>
     <div class="form-fourth-line">
       <mat-form-field class="field-adress" appearance="fill">
         <mat-label>Adress</mat-label>
-        <input matInput placeholder="" />
-      </mat-form-field>   
+        <input [(ngModel)]="address.streetAvenue" ngDefaultControl matInput placeholder="" />
+      </mat-form-field>
       <mat-form-field class="field-state" appearance="fill">
         <mat-label>State</mat-label>
-        <input matInput placeholder="" />
-      </mat-form-field>     
+        <input [(ngModel)]="address.state" ngDefaultControl matInput placeholder="" />
+      </mat-form-field>
     </div>
     <div class="form-fifth-line">
       <mat-form-field class="field-civil-state" appearance="fill">
         <mat-label>Civil State</mat-label>
-        <input matInput placeholder="" />
-      </mat-form-field>   
+        <input [(ngModel)]="personalDetailForm.civilState" ngDefaultControl matInput placeholder="" />
+      </mat-form-field>
       <mat-form-field class="field-citizenship" appearance="fill">
         <mat-label>Citizenship</mat-label>
-        <input matInput placeholder="" />
-      </mat-form-field>     
+        <input [(ngModel)]="personalDetailForm.citizenship" ngDefaultControl matInput placeholder="" />
+      </mat-form-field>
     </div>
     <div class="form-sixt-line">
       <mat-form-field class="field-linkedin" appearance="fill">
         <mat-label>LinkedIn</mat-label>
-        <input matInput placeholder="" />
-      </mat-form-field>   
+        <input [(ngModel)]="socialNetworks.socialUrl" ngDefaultControl matInput placeholder="" />
+      </mat-form-field>
       <mat-form-field class="field-website" appearance="fill">
         <mat-label>Website</mat-label>
-        <input matInput placeholder="" />
-      </mat-form-field>     
+        <input [(ngModel)]="socialNetworks.portfolioUrl" ngDefaultControl matInput placeholder="" />
+      </mat-form-field>
     </div>
   </mat-card>
 </mat-card>
