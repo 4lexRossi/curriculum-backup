@@ -5,11 +5,12 @@
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel
-            >Fill out your personal information</ng-template
+            >Personal information</ng-template
           >
          <app-personal-form></app-personal-form>
 
           <div class="form-action">
+            <button mat-raised-button color="warn" (onClick)="clearForm()">Clear</button>
             <button mat-raised-button color="primary" matStepperNext>Next</button>
           </div>
         </form>
@@ -17,7 +18,20 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel
-            >Fill out your bussiness information</ng-template
+            >Education information</ng-template
+          >
+          <!-- <mat-label>Address</mat-label> -->
+          <div>
+            <!-- <p>Go to a different step to see the error state</p> -->
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel
+            >Bussiness information</ng-template
           >
           <!-- <mat-label>Address</mat-label> -->
           <div>
@@ -29,7 +43,7 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Review info and generate resumee</ng-template>
-        <p>Review info and generate resumee</p>
+        <p>Review / generate</p>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>
